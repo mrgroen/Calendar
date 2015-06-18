@@ -527,7 +527,6 @@ require({
 			this.monthShortNamesFormat = this.monthShortNamesFormat ? this.monthShortNamesFormat.split(",") : null;
 			this.dayNamesFormat = this.dayNamesFormat ? this.dayNamesFormat.split(",") : null;
 			this.dayShortNamesFormat = this.dayShortNamesFormat ? this.dayShortNamesFormat.split(",") : null;
-			this.slotMinutes = this.slotMinutes ? this.slotMinutes : '00:30:00';
 			this.axisFormat = this.axisFormat ? this.axisFormat : 'h(:mm)a';
 			this.startTime = this.startTime ? this.startTime : '08:00';
 			this.endTime = this.endTime ? this.endTime : '17:00';
@@ -558,11 +557,11 @@ require({
 				weekNumbers: this.showWeekNumbers,
 				weekNumberTitle: this.weeknumberTitle,
 				weekends: this.showWeekends,
-				slotDuration: this.slotMinutes,
+				slotDuration: '00:30:00',
 				axisFormat: this.axisFormat,
 				buttonText: this._buttonText,
 				lang: this.languageSetting,
-				eventLimit: this.limitEvents,
+				eventLimit: this.limitEvents
 			};
 
 			if (this._titleFormat) {
@@ -596,7 +595,7 @@ require({
 					dow: [1, 2, 3, 4, 5]
 				};
 			}
-			
+
 			if(this._mxObj)
 			{
 				if(this.showWeekendsAttribute){
@@ -604,6 +603,9 @@ require({
 				}
 				if(this.firstdayAttribute){
 					options.firstDay = this._mxObj.get(this.firstdayAttribute);
+				}
+                if(this.slotMinutesAttribute){
+					options.slotDuration = this._mxObj.get(this.slotMinutesAttribute);
 				}
 			}
 			
@@ -664,7 +666,7 @@ require({
 		// This function checks if properties are set which affect rendering of calendar and 
 		// thus require a destroy action
 		_hasDynamicCalendarPropertiesConfigured : function (){
-			if (this.showWeekendsAttribute && this.firstdayAttribute) {
+			if (this.showWeekendsAttribute && this.firstdayAttribute && this.slotMinutesAttribute) {
 				return true;
 			}
 			else {

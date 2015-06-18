@@ -251,10 +251,13 @@
 			<category>Extra</category>
 			<description>The format of the vertical axis labels in agenda views. Default: h(:mm)a</description>
 		</property>
-		<property key="slotMinutes" type="string" defaultValue="00:30:00">
+		<property key="slotMinutesAttribute" type="attribute" required="false" entityProperty="contextEntity">
 			<caption>Slot duration</caption>
-			<category>Extra</category>
+			<category>Dataview context (Optional)</category>
 			<description>The time interval (in minutes) of day and week calendars. Format: "00:30:00"</description>
+			<attributeTypes>
+				<attributeType name="String" />
+			</attributeTypes>
 		</property>
 		<property key="todaycaption" type="translatableString" required="false">
 			<caption>Today button caption</caption>
