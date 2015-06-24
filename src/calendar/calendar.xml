@@ -217,17 +217,22 @@
 					<category>View settings</category>
 					<description></description>
 				</property>
-				<property key="bgColor" type="string" required="true">
+				<property key="className" type="string" required="true">
+					<caption>Class Name</caption>
+					<category>View settings</category>
+					<description></description>
+				</property>
+				<property key="bgColor" type="string" required="false">
 					<caption>Background color</caption>
 					<category>View settings</category>
 					<description></description>
 				</property>
-				<property key="border" type="string" required="true">
+				<property key="border" type="string" required="false">
 					<caption>Border color</caption>
 					<category>View settings</category>
 					<description></description>
 				</property>
-				<property key="textColor" type="string" required="true">
+				<property key="textColor" type="string" required="false">
 					<caption>Text color</caption>
 					<category>View settings</category>
 					<description></description>

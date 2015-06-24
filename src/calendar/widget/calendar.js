@@ -327,6 +327,7 @@ require({
 					};
 
 				if (objcolors) {
+					newEvent.className = objcolors.className;
 					newEvent.backgroundColor = objcolors.backgroundColor;
 					newEvent.borderColor = objcolors.borderColor;
 					newEvent.textColor = objcolors.textColor;
@@ -424,6 +425,7 @@ require({
 				//set color when enum color equals the color we have on file
 				if (obj.get(this.typeAttr) === color.enumKey) {
 					objcolors = {
+						className: color.className,
 						backgroundColor: color.bgColor,
 						borderColor: color.border,
 						textColor: color.textColor
